@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hwua.codeservice.dao.CodeDao">
+    <select id="queryCode" resultType="map">
+        select * from serinum where prefix = #{arg0} and riqi =  #{arg1}
+    </select>
+
+    <update id="updateCode" >
+        update serinum set num = num+1 where prefix = #{arg0} and riqi =  #{arg1}
+    </update>
+
+    <insert id="addCode">
+        insert into serinum values(null,#{arg0},#{arg1},1);
+    </insert>
+
+</mapper>
